@@ -7,7 +7,6 @@ export const usePelicula = () => {
     peliculaService
       .getAll()
       .then(response => {
-        console.log(response);
         setPeliculas(response);
       })
       .catch(error => {

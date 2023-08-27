@@ -1,13 +1,12 @@
+import base64Img from "base64-img";
+import { v2 as cloudinary } from "cloudinary";
 import {
   actualizarPelicula,
   crearPelicula,
   eliminarPelicula,
   obtenerPelicula,
-  obtenerPeliculas,
-  obtenerPeliculasPorCategoria,
+  obtenerPeliculas
 } from "../services/pelicula.service.js";
-import { v2 as cloudinary } from "cloudinary";
-import base64Img from "base64-img";
 const peliculaController = {};
 
 cloudinary.config({

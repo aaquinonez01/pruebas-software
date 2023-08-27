@@ -2,7 +2,7 @@ import { Badge, Card, Col, Grid } from "@tremor/react";
 import { Link } from "react-router-dom";
 import { usePelicula } from "../hooks/usePelicula";
 const PeliculasPage = () => {
-  const { peliculas, handleDelete } = usePelicula();
+  const { peliculas } = usePelicula();
 
 
   return (
@@ -11,8 +11,8 @@ const PeliculasPage = () => {
         Cartelera de Películas
       </h1>
       <Grid gap={8} className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10">
-        {peliculas.length > 0 &&
-          peliculas.map(pelicula => (
+        {peliculas.length > 0 ?
+          (peliculas.map(pelicula => (
             <Col key={pelicula.id} className="mb-4">
               <Card className="border-none">
                 <img
@@ -37,7 +37,9 @@ const PeliculasPage = () => {
                 </div>
               </Card>
             </Col>
-          ))}
+          ))):
+          (<h1 className="text-xl font-normal mb-4 text-center col-span-4">No hay películas registradas</h1>)
+        }
       </Grid>
     </div>
   );

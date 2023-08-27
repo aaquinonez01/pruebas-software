@@ -124,10 +124,17 @@ const PeliculaForm = () => {
         </div>
         <div className="w-1/2 flex flex-col justify-center items-center ">
           <Card className="p-4 w-72 h-96 mx-auto">
-            <img
+           {
+            imagenURL!=="" ? (
+              <img
               src={imagenURL}
               className="w-full h-full object-cover"
             />
+            ):(
+              <Text className="text-center font-medium">Vista previa de la imagen</Text>
+            )
+              
+           }
           </Card>
           <TextInput
             className="w-1/2 mx-auto mt-4"

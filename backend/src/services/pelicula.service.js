@@ -26,7 +26,16 @@ export const obtenerPeliculas = async () => {
 };
 
 export const obtenerPelicula = async (id) => {
-  return await Pelicula.findById(id);
+  const pelicula =  await Pelicula.findById(id).populate("categoria");
+  const peliculaConCategoria = {
+    id: pelicula._id,
+    titulo: pelicula.titulo,
+    descripcion: pelicula.descripcion,
+    anio: pelicula.anio,
+    imagenURL: pelicula.imagenURL,
+    categoria: pelicula.categoria ? pelicula.categoria.nombre : null,
+  };
+  return peliculaConCategoria;
 };
 
 export const actualizarPelicula = async (id, pelicula) => {

@@ -29,7 +29,7 @@ export const PeliculaDetailPage = () => {
     if (id) {
       getPeliculaById();
     }
-  }, [id, getPeliculaById]);
+  }, [id]);
 
   return (
         <Card className="max-w-4xl mx-auto mt-3">
@@ -39,8 +39,9 @@ export const PeliculaDetailPage = () => {
             </div>
             <div className="w-2/3">
               <Text variant="h2" className="text-3xl font-bold">{pelicula.titulo}</Text>
-              <Text variant="body" className="text-gray-600 font-semibold">Año: {pelicula.anio}</Text>
-              <Text variant="body" className="text-gray-600">Descripción: {pelicula.descripcion} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tempore totam magnam recusandae atque nesciunt dicta, doloremque consequatur mollitia ipsum iure aliquam, at soluta laborum cupiditate vero, animi perspiciatis. Hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cupiditate at dolore nostrum cumque magni laboriosam, itaque perferendis. Harum ad aspernatur nisi vero repellendus adipisci, suscipit veniam esse odio quisquam!</Text>
+              <Text variant="body" className="text-gray-600 font-bold">Año: {pelicula.anio}</Text>
+              <Text variant="body" className="text-gray-600 font-bold">Categoría: {pelicula.categoria}</Text>
+              <Text variant="body" className="text-gray-600"><span className="font-bold">Descripción</span>: {pelicula.descripcion} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tempore totam magnam recusandae atque nesciunt dicta, doloremque consequatur mollitia ipsum iure aliquam, at soluta laborum cupiditate vero, animi perspiciatis. Hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cupiditate at dolore nostrum cumque magni laboriosam, itaque perferendis. Harum ad aspernatur nisi vero repellendus adipisci, suscipit veniam esse odio quisquam!</Text>
               {/* Agrega más información de la película según tu modelo de datos */}
               <Button variant="primary" className="bg-red-500 hover:bg-red-600 rounded-lg mt-4" onClick={()=>handleDelete(pelicula.id)
               }>Eliminar Pelicula</Button>
