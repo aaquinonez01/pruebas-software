@@ -34,7 +34,7 @@ const Navbar = () => {
                     to="/categorias"
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     onClick={() => setCategoriasDropdown(false)}
-                    id="options-menu-categorias-0"
+                    id="categorias-list"
                   >
                     Lista de Categorías
                   </Link>
