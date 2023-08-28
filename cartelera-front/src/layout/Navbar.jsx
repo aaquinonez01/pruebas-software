@@ -24,6 +24,7 @@ const Navbar = () => {
               <button
                 onClick={toggleCategoriasDropdown}
                 className="text-white hover:text-gray-300 focus:outline-none"
+                id="options-menu-categorias"
               >
                 Categorías
               </button>
@@ -33,6 +34,7 @@ const Navbar = () => {
                     to="/categorias"
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
                     onClick={() => setCategoriasDropdown(false)}
+                    id="options-menu-categorias-0"
                   >
                     Lista de Categorías
                   </Link>
