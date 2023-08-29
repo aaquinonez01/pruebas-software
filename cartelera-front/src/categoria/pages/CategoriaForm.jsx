@@ -71,8 +71,14 @@ export const CategoriaForm = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <label className="block font-medium">Nombre:</label>
+            <label
+              htmlFor="Nombre"
+              className="block font-medium"
+            >
+              Nombre
+            </label>
             <TextInput
+              id="Nombre"
               data-cy="nombre-categoria"
               type="text"
               placeholder="Ingrese el nombre de la categoría"
@@ -83,8 +89,14 @@ export const CategoriaForm = () => {
             />
           </div>
           <div>
-            <label className="block font-medium">Descripción:</label>
+            <label
+              htmlFor="Descripcion"
+              className="block font-medium"
+            >
+              Descripción
+            </label>
             <TextInput
+              id="Descripcion"
               data-cy="descripcion-categoria"
               placeholder="Ingrese la descripción de la categoría"
               className="w-full"

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 // Pruebas de Aceptación: 
 // Prueba de Actualización de Categoría desde la Interfaz de Usuario:
 // Simula la actualización de una categoría y verifica que los cambios se reflejen en la lista.

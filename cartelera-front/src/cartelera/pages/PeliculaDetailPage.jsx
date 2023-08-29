@@ -1,4 +1,4 @@
-import { Button, Card, Text } from "@tremor/react";
+import { Button, Card } from "@tremor/react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { peliculaService } from "../../services/pelicula.service";
@@ -8,14 +8,14 @@ export const PeliculaDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleDelete = id => {
+  const handleDelete = (id) => {
     peliculaService
       .delete(id)
-      .then(response => {
+      .then((response) => {
         console.log(response);
         navigate("/peliculas");
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -32,21 +32,50 @@ export const PeliculaDetailPage = () => {
   }, [id]);
 
   return (
-        <Card className="max-w-4xl mx-auto mt-3">
-          <div className="flex space-x-4 p-4">
-            <div className="w-1/3">
-              <img src={pelicula.imagenURL} alt={pelicula.titulo} className="w-full h-auto" />
-            </div>
-            <div className="w-2/3">
-              <Text variant="h2" className="text-3xl font-bold">{pelicula.titulo}</Text>
-              <Text variant="body" className="text-gray-600 font-bold">Año: {pelicula.anio}</Text>
-              <Text variant="body" className="text-gray-600 font-bold">Categoría: {pelicula.categoria}</Text>
-              <Text variant="body" className="text-gray-600"><span className="font-bold">Descripción</span>: {pelicula.descripcion} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tempore totam magnam recusandae atque nesciunt dicta, doloremque consequatur mollitia ipsum iure aliquam, at soluta laborum cupiditate vero, animi perspiciatis. Hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cupiditate at dolore nostrum cumque magni laboriosam, itaque perferendis. Harum ad aspernatur nisi vero repellendus adipisci, suscipit veniam esse odio quisquam!</Text>
-              {/* Agrega más información de la película según tu modelo de datos */}
-              <Button variant="primary" className="bg-red-500 hover:bg-red-600 rounded-lg mt-4" onClick={()=>handleDelete(pelicula.id)
-              }>Eliminar Pelicula</Button>
-            </div>
-          </div>
-        </Card>
+    <Card className="max-w-4xl mx-auto mt-3">
+      <div className="flex space-x-4 p-4">
+        <div className="w-1/3">
+          <img
+            src={pelicula.imagenURL}
+            alt={pelicula.titulo}
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="w-2/3">
+          <p
+            className="text-3xl font-bold text-titulo"
+            data-testid="titulo-pelicula"
+          >
+            {pelicula.titulo}
+          </p>
+          <p
+            className="text-gray-600 font-bold text-anio"
+            data-testid="anio-pelicula"
+          >
+            Año: {pelicula.anio}
+          </p>
+          <p
+            className="text-gray-600 font-bold text-categoria"
+            data-testid="categoria-pelicula"
+          >
+            Categoría: {pelicula.categoria}
+          </p>
+          <p
+            className="text-gray-600 text-descripcion"
+            data-testid="descripcion-pelicula"
+          >
+            Descripción: {pelicula.descripcion}
+          </p>
+          {/* Agrega más información de la película según tu modelo de datos */}
+          <Button
+            variant="primary"
+            className="bg-red-500 hover:bg-red-600 rounded-lg mt-4"
+            onClick={() => handleDelete(pelicula.id)}
+          >
+            Eliminar Pelicula
+          </Button>
+        </div>
+      </div>
+    </Card>
   );
 };
