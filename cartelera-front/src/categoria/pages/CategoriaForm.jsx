@@ -96,7 +96,7 @@ export const CategoriaForm = () => {
           <div className="flex justify-end">
             <Button
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-              data-cy="data-cy=boton-actualizar"
+              data-cy="boton-actualizar"
             >
               {tipoAccion === "Crear" ? "Crear Categoría" : "Editar Categoría"}
             </Button>

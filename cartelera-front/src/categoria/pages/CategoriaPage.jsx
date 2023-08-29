@@ -6,7 +6,6 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
-  Text,
   Title,
 } from "@tremor/react";
 import { useEffect, useState } from "react";
@@ -64,10 +63,20 @@ export const CategoriaPage = () => {
                 <TableRow key={item.id}>
                   <TableCell className="text-center">{item.id}</TableCell>
                   <TableCell>
-                    <Text className="text-center">{item.nombre}</Text>
+                    <p
+                      className="text-center"
+                      id="td-nombre-categoria"
+                    >
+                      {item.nombre}
+                    </p>
                   </TableCell>
                   <TableCell>
-                    <Text>{item.descripcion}</Text>
+                    <p
+                      data-cy="td-descripcion-categoria"
+                      id="td-descripcion-categoria"
+                    >
+                      {item.descripcion}
+                    </p>
                   </TableCell>
                   <TableCell className="flex gap-3">
                     <Link
